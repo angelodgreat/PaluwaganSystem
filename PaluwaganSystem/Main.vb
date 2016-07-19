@@ -16,8 +16,57 @@ Public Class Main
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_paluwaganmain()
+        compute_totalearnings()
+        test()
     End Sub
 
+    Public Sub test()
+        Dim firstDate, msg As String
+        Dim secondDate As Date
+        firstDate = InputBox("Enter a date")
+        Try
+            secondDate = CDate(firstDate)
+            msg = "Days from today: " & DateDiff(DateInterval.Day, Now, secondDate)
+            MsgBox(msg)
+        Catch
+            MsgBox("Not a valid date value.")
+        End Try
+    End Sub
+
+    Public Sub compute_totalearnings()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
+
+        If MysqlConn.State = ConnectionState.Open Then
+            MysqlConn.Close()
+        End If
+
+        Try
+            MysqlConn.Open()
+            Dim query As String
+            Dim holder As String
+
+            query = "SELECT sum(amount) as 'temp' from paluwagan"
+            comm = New MySqlCommand(query, MysqlConn)
+            reader = comm.ExecuteReader
+
+            While reader.Read
+                holder = reader.GetString("temp")
+            End While
+            lbl_totalearnings.Text = holder
+
+
+
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            RadMessageBox.Show(Me, ex.Message, "ROPA Management", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+
+    End Sub
     Public Sub load_paluwaganmain()
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
@@ -33,7 +82,7 @@ Public Class Main
         Try
             MysqlConn.Open()
             Dim query As String
-            query = "Select DATE_FORMAT(date,'%M %d %Y') as 'Date', contributor as 'Contributor', amount as 'Amount' from paluwagan"
+            query = "Select DATE_FORMAT(date,'%M %d %Y') as 'Date', contributor as 'Contributor', amount as 'Amount',week as 'Week' from paluwagan"
 
             COMMAND = New MySqlCommand(query, MysqlConn)
             sda.SelectCommand = COMMAND
@@ -85,7 +134,10 @@ Public Class Main
             End If
         End If
 
+        rec_dtp_datecontributed.Value = DateTime.Now
+
         load_paluwaganmain()
+        compute_totalearnings()
     End Sub
 
 End Class

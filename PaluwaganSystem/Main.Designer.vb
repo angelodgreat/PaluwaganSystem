@@ -22,20 +22,26 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem14 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem15 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem17 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.VisualStudio2012DarkTheme1 = New Telerik.WinControls.Themes.VisualStudio2012DarkTheme()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
         Me.rgv_paluwaganmain = New Telerik.WinControls.UI.RadGridView()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
+        Me.rec_week = New Telerik.WinControls.UI.RadTextBox()
+        Me.btn_delete = New Telerik.WinControls.UI.RadButton()
+        Me.btn_update = New Telerik.WinControls.UI.RadButton()
         Me.btn_save = New Telerik.WinControls.UI.RadButton()
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
         Me.rec_dtp_datecontributed = New Telerik.WinControls.UI.RadDateTimePicker()
@@ -43,17 +49,18 @@ Partial Class Main
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.rec_cb_contributor = New Telerik.WinControls.UI.RadDropDownList()
-        Me.btn_update = New Telerik.WinControls.UI.RadButton()
-        Me.btn_delete = New Telerik.WinControls.UI.RadButton()
         Me.lbl_totalearnings = New Telerik.WinControls.UI.RadLabel()
-        Me.rec_week = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
         CType(Me.rgv_paluwaganmain, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rgv_paluwaganmain.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
+        CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.rec_week, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_delete, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_update, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_save, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rec_dtp_datecontributed, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,11 +68,8 @@ Partial Class Main
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rec_cb_contributor, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_update, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_delete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lbl_totalearnings, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.rec_week, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -93,7 +97,7 @@ Partial Class Main
         Me.rgv_paluwaganmain.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill
         Me.rgv_paluwaganmain.MasterTemplate.EnableGrouping = False
         Me.rgv_paluwaganmain.MasterTemplate.ShowRowHeaderColumn = False
-        Me.rgv_paluwaganmain.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.rgv_paluwaganmain.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.rgv_paluwaganmain.Name = "rgv_paluwaganmain"
         Me.rgv_paluwaganmain.ReadOnly = True
         Me.rgv_paluwaganmain.Size = New System.Drawing.Size(1035, 245)
@@ -122,6 +126,46 @@ Partial Class Main
         Me.RadGroupBox2.TabIndex = 1
         Me.RadGroupBox2.Text = "RadGroupBox2"
         Me.RadGroupBox2.ThemeName = "VisualStudio2012Dark"
+        '
+        'RadLabel4
+        '
+        Me.RadLabel4.Location = New System.Drawing.Point(138, 80)
+        Me.RadLabel4.Name = "RadLabel4"
+        Me.RadLabel4.Size = New System.Drawing.Size(37, 18)
+        Me.RadLabel4.TabIndex = 11
+        Me.RadLabel4.Text = "Week:"
+        Me.RadLabel4.ThemeName = "VisualStudio2012Dark"
+        '
+        'rec_week
+        '
+        Me.rec_week.Location = New System.Drawing.Point(181, 77)
+        Me.rec_week.MinimumSize = New System.Drawing.Size(0, 24)
+        Me.rec_week.Name = "rec_week"
+        '
+        '
+        '
+        Me.rec_week.RootElement.MinSize = New System.Drawing.Size(0, 24)
+        Me.rec_week.Size = New System.Drawing.Size(243, 24)
+        Me.rec_week.TabIndex = 10
+        Me.rec_week.ThemeName = "VisualStudio2012Dark"
+        '
+        'btn_delete
+        '
+        Me.btn_delete.Location = New System.Drawing.Point(81, 186)
+        Me.btn_delete.Name = "btn_delete"
+        Me.btn_delete.Size = New System.Drawing.Size(110, 24)
+        Me.btn_delete.TabIndex = 9
+        Me.btn_delete.Text = "Delete"
+        Me.btn_delete.ThemeName = "VisualStudio2012Dark"
+        '
+        'btn_update
+        '
+        Me.btn_update.Location = New System.Drawing.Point(197, 186)
+        Me.btn_update.Name = "btn_update"
+        Me.btn_update.Size = New System.Drawing.Size(110, 24)
+        Me.btn_update.TabIndex = 8
+        Me.btn_update.Text = "Update"
+        Me.btn_update.ThemeName = "VisualStudio2012Dark"
         '
         'btn_save
         '
@@ -162,16 +206,18 @@ Partial Class Main
         'rec_cb_amount
         '
         Me.rec_cb_amount.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem1.Text = "50"
-        RadListDataItem2.Text = "100"
-        RadListDataItem3.Text = "150"
-        RadListDataItem4.Text = "200"
-        RadListDataItem5.Text = "250"
-        Me.rec_cb_amount.Items.Add(RadListDataItem1)
-        Me.rec_cb_amount.Items.Add(RadListDataItem2)
-        Me.rec_cb_amount.Items.Add(RadListDataItem3)
-        Me.rec_cb_amount.Items.Add(RadListDataItem4)
-        Me.rec_cb_amount.Items.Add(RadListDataItem5)
+        RadListDataItem12.Text = "50"
+        RadListDataItem13.Text = "100"
+        RadListDataItem14.Text = "150"
+        RadListDataItem15.Text = "200"
+        RadListDataItem16.Text = "250"
+        RadListDataItem17.Text = "1500"
+        Me.rec_cb_amount.Items.Add(RadListDataItem12)
+        Me.rec_cb_amount.Items.Add(RadListDataItem13)
+        Me.rec_cb_amount.Items.Add(RadListDataItem14)
+        Me.rec_cb_amount.Items.Add(RadListDataItem15)
+        Me.rec_cb_amount.Items.Add(RadListDataItem16)
+        Me.rec_cb_amount.Items.Add(RadListDataItem17)
         Me.rec_cb_amount.Location = New System.Drawing.Point(181, 134)
         Me.rec_cb_amount.Name = "rec_cb_amount"
         Me.rec_cb_amount.Size = New System.Drawing.Size(243, 24)
@@ -199,37 +245,21 @@ Partial Class Main
         'rec_cb_contributor
         '
         Me.rec_cb_contributor.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem6.Text = "Umali, Christian Angelo "
-        RadListDataItem7.Text = "Dinglasan, Janisse Crizhna"
-        RadListDataItem8.Text = "Umali, Ma. Analisa"
-        RadListDataItem9.Text = "Villaruel, Zyrabelle"
-        Me.rec_cb_contributor.Items.Add(RadListDataItem6)
-        Me.rec_cb_contributor.Items.Add(RadListDataItem7)
-        Me.rec_cb_contributor.Items.Add(RadListDataItem8)
-        Me.rec_cb_contributor.Items.Add(RadListDataItem9)
+        RadListDataItem1.Text = "Umali, Christian Angelo "
+        RadListDataItem2.Text = "Dinglasan, Janisse Crizhna"
+        RadListDataItem3.Text = "Umali, Ma. Analisa"
+        RadListDataItem4.Text = "Villaruel, Zyrabelle"
+        RadListDataItem5.Text = "Umali, Randy P."
+        Me.rec_cb_contributor.Items.Add(RadListDataItem1)
+        Me.rec_cb_contributor.Items.Add(RadListDataItem2)
+        Me.rec_cb_contributor.Items.Add(RadListDataItem3)
+        Me.rec_cb_contributor.Items.Add(RadListDataItem4)
+        Me.rec_cb_contributor.Items.Add(RadListDataItem5)
         Me.rec_cb_contributor.Location = New System.Drawing.Point(181, 104)
         Me.rec_cb_contributor.Name = "rec_cb_contributor"
         Me.rec_cb_contributor.Size = New System.Drawing.Size(243, 24)
         Me.rec_cb_contributor.TabIndex = 0
         Me.rec_cb_contributor.ThemeName = "VisualStudio2012Dark"
-        '
-        'btn_update
-        '
-        Me.btn_update.Location = New System.Drawing.Point(197, 186)
-        Me.btn_update.Name = "btn_update"
-        Me.btn_update.Size = New System.Drawing.Size(110, 24)
-        Me.btn_update.TabIndex = 8
-        Me.btn_update.Text = "Update"
-        Me.btn_update.ThemeName = "VisualStudio2012Dark"
-        '
-        'btn_delete
-        '
-        Me.btn_delete.Location = New System.Drawing.Point(81, 186)
-        Me.btn_delete.Name = "btn_delete"
-        Me.btn_delete.Size = New System.Drawing.Size(110, 24)
-        Me.btn_delete.TabIndex = 9
-        Me.btn_delete.Text = "Delete"
-        Me.btn_delete.ThemeName = "VisualStudio2012Dark"
         '
         'lbl_totalearnings
         '
@@ -240,28 +270,21 @@ Partial Class Main
         Me.lbl_totalearnings.Text = "Total Earnings"
         Me.lbl_totalearnings.ThemeName = "VisualStudio2012Dark"
         '
-        'rec_week
+        'RadLabel5
         '
-        Me.rec_week.Location = New System.Drawing.Point(181, 77)
-        Me.rec_week.Name = "rec_week"
-        Me.rec_week.Size = New System.Drawing.Size(243, 21)
-        Me.rec_week.TabIndex = 10
-        Me.rec_week.ThemeName = "VisualStudio2012Dark"
-        '
-        'RadLabel4
-        '
-        Me.RadLabel4.Location = New System.Drawing.Point(138, 80)
-        Me.RadLabel4.Name = "RadLabel4"
-        Me.RadLabel4.Size = New System.Drawing.Size(37, 18)
-        Me.RadLabel4.TabIndex = 11
-        Me.RadLabel4.Text = "Week:"
-        Me.RadLabel4.ThemeName = "VisualStudio2012Dark"
+        Me.RadLabel5.Location = New System.Drawing.Point(887, 283)
+        Me.RadLabel5.Name = "RadLabel5"
+        Me.RadLabel5.Size = New System.Drawing.Size(79, 18)
+        Me.RadLabel5.TabIndex = 3
+        Me.RadLabel5.Text = "Total Earnings:"
+        Me.RadLabel5.ThemeName = "VisualStudio2012Dark"
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1063, 529)
+        Me.Controls.Add(Me.RadLabel5)
         Me.Controls.Add(Me.lbl_totalearnings)
         Me.Controls.Add(Me.RadGroupBox2)
         Me.Controls.Add(Me.RadGroupBox1)
@@ -279,6 +302,10 @@ Partial Class Main
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
         Me.RadGroupBox2.PerformLayout()
+        CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.rec_week, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_delete, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_update, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_save, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rec_dtp_datecontributed, System.ComponentModel.ISupportInitialize).EndInit()
@@ -286,11 +313,8 @@ Partial Class Main
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rec_cb_contributor, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_update, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_delete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lbl_totalearnings, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.rec_week, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -313,5 +337,6 @@ Partial Class Main
     Friend WithEvents lbl_totalearnings As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel4 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents rec_week As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadLabel5 As Telerik.WinControls.UI.RadLabel
 End Class
 
