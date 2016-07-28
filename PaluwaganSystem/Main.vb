@@ -82,7 +82,7 @@ Public Class Main
         Try
             MysqlConn.Open()
             Dim query As String
-            query = "Select DATE_FORMAT(date,'%M %d %Y') as 'Date', contributor as 'Contributor', amount as 'Amount',week as 'Week' from paluwagan"
+            query = "Select DATE_FORMAT(date,'%M %d %Y') as 'Date', contributor as 'Contributor', amount as 'Amount',week as 'Week',day as 'Day' from paluwagan"
 
             COMMAND = New MySqlCommand(query, MysqlConn)
             sda.SelectCommand = COMMAND
@@ -118,7 +118,7 @@ Public Class Main
                 Try
                     MysqlConn.Open()
                     Dim query As String
-                    query = "INSERT INTO paluwagan (date,contributor,amount,week) VALUES ('" & Format(CDate(rec_dtp_datecontributed.Value), "yyyy-MM-dd") & "','" & rec_cb_contributor.Text & "','" & rec_cb_amount.Text & "','" & rec_week.Text & "')  "
+                    query = "INSERT INTO paluwagan (date,contributor,amount,week,day) VALUES ('" & Format(CDate(rec_dtp_datecontributed.Value), "yyyy-MM-dd") & "','" & rec_cb_contributor.Text & "','" & rec_cb_amount.Text & "','" & rec_week.Text & "','" & rec_day.Text & "')  "
                     COMMAND = New MySqlCommand(query, MysqlConn)
                     READER = COMMAND.ExecuteReader
 
@@ -140,4 +140,7 @@ Public Class Main
         compute_totalearnings()
     End Sub
 
+    Private Sub RadGroupBox2_Click(sender As Object, e As EventArgs) Handles RadGroupBox2.Click
+
+    End Sub
 End Class
