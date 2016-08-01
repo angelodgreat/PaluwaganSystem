@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Module GlobalVariableModule
     Public MySQLConn As New MySqlConnection
-    Public connstring As String = "server=localhost;userid=root;database=paluwagan_system"
+    Public connstring As String = "server=localhost;userid=root;password=root;database=paluwagan_system"
     Public comm As MySqlCommand
     Public reader As MySqlDataReader
     Public adapter As New MySqlDataAdapter

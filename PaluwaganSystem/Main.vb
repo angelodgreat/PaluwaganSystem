@@ -4,7 +4,6 @@ Public Class Main
 
     Dim ds As New DataSet
     Dim MysqlConn As MySqlConnection
-    Dim COMMAND As MySqlCommand
     Dim dbDataSet As New DataTable
     Dim svYN As DialogResult
     Dim addYN As DialogResult
@@ -13,11 +12,12 @@ Public Class Main
     Dim updateYN As DialogResult
     Dim deleteYN As DialogResult
     Dim doneYN As DialogResult
-
+    Dim query As String
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_paluwaganmain()
         compute_totalearnings()
         test()
+        rec_dtp_datecontributed.Text = DateTime.Now
     End Sub
 
     Public Sub test()
@@ -43,10 +43,12 @@ Public Class Main
 
         Try
             MysqlConn.Open()
-            Dim query As String
+
             Dim holder As String
 
             query = "SELECT sum(amount) as 'temp' from paluwagan"
+
+
             comm = New MySqlCommand(query, MysqlConn)
             reader = comm.ExecuteReader
 
@@ -81,11 +83,11 @@ Public Class Main
 
         Try
             MysqlConn.Open()
-            Dim query As String
-            query = "Select DATE_FORMAT(date,'%M %d %Y') as 'Date', contributor as 'Contributor', amount as 'Amount',week as 'Week' from paluwagan"
 
-            COMMAND = New MySqlCommand(query, MysqlConn)
-            sda.SelectCommand = COMMAND
+            query = "Select DATE_FORMAT(date,'%M %d %Y') as 'Date', contributor as 'Contributor', amount as 'Amount',week as 'Week',day as 'Day' from paluwagan"
+
+            comm = New MySqlCommand(query, MysqlConn)
+            sda.SelectCommand = comm
             sda.Fill(dbdataset)
             bsource.DataSource = dbdataset
             rgv_paluwaganmain.DataSource = bsource
@@ -117,11 +119,11 @@ Public Class Main
             Else
                 Try
                     MysqlConn.Open()
-                    Dim query As String
-                    query = "INSERT INTO paluwagan (date,contributor,amount,week) VALUES ('" & Format(CDate(rec_dtp_datecontributed.Value), "yyyy-MM-dd") & "','" & rec_cb_contributor.Text & "','" & rec_cb_amount.Text & "','" & rec_week.Text & "')  "
-                    COMMAND = New MySqlCommand(query, MysqlConn)
-                    READER = COMMAND.ExecuteReader
 
+                    query = "INSERT INTO paluwagan (date,contributor,amount,week,day) VALUES ('" & Format(CDate(rec_dtp_datecontributed.Value), "yyyy-MM-dd") & "','" & rec_cb_contributor.Text & "','" & rec_cb_amount.Text & "','" & rec_week.Text & "','" & rec_day.Text & "')  "
+                    comm = New MySqlCommand(query, MysqlConn)
+                    READER = comm.ExecuteReader
+                    rec_dtp_datecontributed.Text = DateTime.Now
                     RadMessageBox.Show(Me, "Paluwagan Saved!", "Paluwagan System Management", MessageBoxButtons.OK, RadMessageIcon.Info)
                     MysqlConn.Close()
 
@@ -140,4 +142,64 @@ Public Class Main
         compute_totalearnings()
     End Sub
 
+    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
+
+        If MysqlConn.State = ConnectionState.Open Then
+            MysqlConn.Close()
+        End If
+
+        updateYN = RadMessageBox.Show(Me, "Are you sure you want to update this record?", "Paluwagan System Management", MessageBoxButtons.OK, RadMessageIcon.Question)
+        If updateYN = MsgBoxResult.Yes Then
+            If (rec_cb_amount.Text = "") Or (rec_cb_contributor.Text = "") Or (rec_day.Text = "") Or (rec_dtp_datecontributed.Text = "") Or (rec_week.Text = "") Then
+                RadMessageBox.Show(Me, "Please fill all fields", "Paluwagan Management System", MessageBoxButtons.OK, RadMessageIcon.Error)
+            Else
+                Try
+                    MysqlConn.Open()
+                    query = "UPDATE paluwagan SET date='" & Format(CDate(rec_dtp_datecontributed.Value), "yyyy-MM-dd") & "',contributor='" & rec_cb_contributor.Text & "',week='" & rec_week.Text & "',amount='" & rec_cb_amount.Text & "',day='" & rec_day.Text & "' where contributor='" & rec_cb_contributor.Text & "' and date='" & Format(CDate(rec_dtp_datecontributed.Value), "yyyy-MM-dd") & "'"
+                    comm = New MySqlCommand(query, MysqlConn)
+                    reader = comm.ExecuteReader
+                    rec_dtp_datecontributed.Text = DateTime.Now
+                    RadMessageBox.Show(Me, "Paluwagan Updated!", "Paluwagan System Management", MessageBoxButtons.OK, RadMessageIcon.Info)
+                    MysqlConn.Close()
+                Catch ex As Exception
+                    RadMessageBox.Show(Me, ex.Message, "Paluwagan System Management", MessageBoxButtons.OK, RadMessageIcon.Error)
+                Finally
+                    MysqlConn.Dispose()
+                End Try
+            End If
+        End If
+
+        load_paluwaganmain()
+        compute_totalearnings()
+    End Sub
+
+    Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
+
+        If MysqlConn.State = ConnectionState.Open Then
+            MysqlConn.Close()
+        End If
+
+        deleteYN = RadMessageBox.Show(Me, "Are you sure you want to delete this record?", "Paluwagan System Management", MessageBoxButtons.OK, RadMessageIcon.Question)
+        If deleteYN = MsgBoxResult.Yes Then
+            Try
+                MysqlConn.Open()
+                query = "DELETE FROM paluwagan where date='" & Format(CDate(rec_dtp_datecontributed.Value), "yyyy-MM-dd") & "' and contributor='" & rec_cb_contributor.Text & "'"
+                comm = New MySqlCommand(query, MysqlConn)
+                reader = comm.ExecuteReader
+
+                rec_cb_amount.Text = ""
+                rec_cb_contributor.Text = ""
+                rec_day.Text = ""
+                rec_dtp_datecontributed.Text = DateTime.Now
+                rec_week.Text = ""
+
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
 End Class
