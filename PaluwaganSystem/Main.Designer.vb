@@ -444,12 +444,13 @@ Partial Class Main
         Me.Controls.Add(Me.lbl_totalearnings)
         Me.Controls.Add(Me.RadGroupBox2)
         Me.Controls.Add(Me.RadGroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Main"
         '
         '
         '
         Me.RootElement.ApplyShapeToControl = True
-        Me.Text = "Main"
+        Me.Text = "Paluwagan System"
         Me.ThemeName = "VisualStudio2012Dark"
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
