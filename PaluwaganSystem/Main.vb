@@ -229,5 +229,39 @@ Public Class Main
         End If
     End Sub
 
+    Private Sub filter_contributed_TextChanged(sender As Object, e As EventArgs) Handles filter_contributed.TextChanged
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
 
+        If MysqlConn.State = ConnectionState.Open Then
+            MysqlConn.Close()
+        End If
+
+        Try
+            MysqlConn.Open()
+
+            Dim holder As String
+
+            query = "SELECT sum(amount) as 'temp' from paluwagan where contributor='" & filter_contributed.Text & "'"
+
+
+            comm = New MySqlCommand(query, MysqlConn)
+            reader = comm.ExecuteReader
+
+            While reader.Read
+                holder = reader.GetString("temp")
+            End While
+            lbl_filter_contributions.Text = holder
+
+
+
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            RadMessageBox.Show(Me, ex.Message, "ROPA Management", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+    End Sub
 End Class
