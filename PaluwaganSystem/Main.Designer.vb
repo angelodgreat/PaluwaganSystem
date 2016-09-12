@@ -22,23 +22,23 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim RadListDataItem17 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem18 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem19 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem20 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem21 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem22 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem14 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem15 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.VisualStudio2012DarkTheme1 = New Telerik.WinControls.Themes.VisualStudio2012DarkTheme()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
         Me.rgv_paluwaganmain = New Telerik.WinControls.UI.RadGridView()
@@ -104,6 +104,9 @@ Partial Class Main
         'RadGroupBox1
         '
         Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadGroupBox1.Controls.Add(Me.rgv_paluwaganmain)
         Me.RadGroupBox1.HeaderText = "Contributions"
         Me.RadGroupBox1.Location = New System.Drawing.Point(12, 12)
@@ -125,7 +128,7 @@ Partial Class Main
         Me.rgv_paluwaganmain.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill
         Me.rgv_paluwaganmain.MasterTemplate.EnableGrouping = False
         Me.rgv_paluwaganmain.MasterTemplate.ShowRowHeaderColumn = False
-        Me.rgv_paluwaganmain.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.rgv_paluwaganmain.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.rgv_paluwaganmain.Name = "rgv_paluwaganmain"
         Me.rgv_paluwaganmain.ReadOnly = True
         Me.rgv_paluwaganmain.Size = New System.Drawing.Size(1035, 245)
@@ -136,6 +139,7 @@ Partial Class Main
         'RadGroupBox2
         '
         Me.RadGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.RadGroupBox2.Controls.Add(Me.RadLabel9)
         Me.RadGroupBox2.Controls.Add(Me.rec_cb_contributor)
         Me.RadGroupBox2.Controls.Add(Me.rec_day)
@@ -169,16 +173,16 @@ Partial Class Main
         'rec_cb_contributor
         '
         Me.rec_cb_contributor.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem17.Text = "Umali, Christian Angelo "
-        RadListDataItem18.Text = "Dinglasan, Janisse Crizhna"
-        RadListDataItem19.Text = "Umali, Ma. Analisa"
-        RadListDataItem20.Text = "Villaruel, Zyrabelle"
-        RadListDataItem21.Text = "Umali, Randy P."
-        Me.rec_cb_contributor.Items.Add(RadListDataItem17)
-        Me.rec_cb_contributor.Items.Add(RadListDataItem18)
-        Me.rec_cb_contributor.Items.Add(RadListDataItem19)
-        Me.rec_cb_contributor.Items.Add(RadListDataItem20)
-        Me.rec_cb_contributor.Items.Add(RadListDataItem21)
+        RadListDataItem1.Text = "Umali, Christian Angelo "
+        RadListDataItem2.Text = "Dinglasan, Janisse Crizhna"
+        RadListDataItem3.Text = "Umali, Ma. Analisa"
+        RadListDataItem4.Text = "Villaruel, Zyrabelle"
+        RadListDataItem5.Text = "Umali, Randy P."
+        Me.rec_cb_contributor.Items.Add(RadListDataItem1)
+        Me.rec_cb_contributor.Items.Add(RadListDataItem2)
+        Me.rec_cb_contributor.Items.Add(RadListDataItem3)
+        Me.rec_cb_contributor.Items.Add(RadListDataItem4)
+        Me.rec_cb_contributor.Items.Add(RadListDataItem5)
         Me.rec_cb_contributor.Location = New System.Drawing.Point(181, 126)
         Me.rec_cb_contributor.Name = "rec_cb_contributor"
         Me.rec_cb_contributor.Size = New System.Drawing.Size(243, 24)
@@ -222,6 +226,7 @@ Partial Class Main
         '
         'btn_delete
         '
+        Me.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_delete.Location = New System.Drawing.Point(82, 194)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(110, 24)
@@ -231,6 +236,7 @@ Partial Class Main
         '
         'btn_update
         '
+        Me.btn_update.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_update.Location = New System.Drawing.Point(198, 194)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(110, 24)
@@ -240,6 +246,7 @@ Partial Class Main
         '
         'btn_save
         '
+        Me.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_save.Location = New System.Drawing.Point(314, 194)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(110, 24)
@@ -277,18 +284,18 @@ Partial Class Main
         'rec_cb_amount
         '
         Me.rec_cb_amount.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem1.Text = "50"
-        RadListDataItem2.Text = "100"
-        RadListDataItem3.Text = "150"
-        RadListDataItem4.Text = "200"
-        RadListDataItem5.Text = "250"
-        RadListDataItem22.Text = "1500"
-        Me.rec_cb_amount.Items.Add(RadListDataItem1)
-        Me.rec_cb_amount.Items.Add(RadListDataItem2)
-        Me.rec_cb_amount.Items.Add(RadListDataItem3)
-        Me.rec_cb_amount.Items.Add(RadListDataItem4)
-        Me.rec_cb_amount.Items.Add(RadListDataItem5)
-        Me.rec_cb_amount.Items.Add(RadListDataItem22)
+        RadListDataItem6.Text = "50"
+        RadListDataItem7.Text = "100"
+        RadListDataItem8.Text = "150"
+        RadListDataItem9.Text = "200"
+        RadListDataItem10.Text = "250"
+        RadListDataItem11.Text = "1500"
+        Me.rec_cb_amount.Items.Add(RadListDataItem6)
+        Me.rec_cb_amount.Items.Add(RadListDataItem7)
+        Me.rec_cb_amount.Items.Add(RadListDataItem8)
+        Me.rec_cb_amount.Items.Add(RadListDataItem9)
+        Me.rec_cb_amount.Items.Add(RadListDataItem10)
+        Me.rec_cb_amount.Items.Add(RadListDataItem11)
         Me.rec_cb_amount.Location = New System.Drawing.Point(181, 156)
         Me.rec_cb_amount.Name = "rec_cb_amount"
         Me.rec_cb_amount.Size = New System.Drawing.Size(243, 24)
@@ -315,6 +322,7 @@ Partial Class Main
         '
         'lbl_totalearnings
         '
+        Me.lbl_totalearnings.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_totalearnings.Location = New System.Drawing.Point(972, 283)
         Me.lbl_totalearnings.Name = "lbl_totalearnings"
         Me.lbl_totalearnings.Size = New System.Drawing.Size(77, 18)
@@ -324,6 +332,7 @@ Partial Class Main
         '
         'RadLabel5
         '
+        Me.RadLabel5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel5.Location = New System.Drawing.Point(887, 283)
         Me.RadLabel5.Name = "RadLabel5"
         Me.RadLabel5.Size = New System.Drawing.Size(79, 18)
@@ -368,6 +377,7 @@ Partial Class Main
         'RadGroupBox3
         '
         Me.RadGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.RadGroupBox3.Controls.Add(Me.filter_contributed)
         Me.RadGroupBox3.Controls.Add(Me.lbl_filter_contributions)
         Me.RadGroupBox3.Controls.Add(Me.RadLabel7)
@@ -383,16 +393,16 @@ Partial Class Main
         'filter_contributed
         '
         Me.filter_contributed.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem6.Text = "Umali, Christian Angelo "
-        RadListDataItem7.Text = "Dinglasan, Janisse Crizhna"
-        RadListDataItem8.Text = "Umali, Ma. Analisa"
-        RadListDataItem9.Text = "Villaruel, Zyrabelle"
-        RadListDataItem10.Text = "Umali, Randy P."
-        Me.filter_contributed.Items.Add(RadListDataItem6)
-        Me.filter_contributed.Items.Add(RadListDataItem7)
-        Me.filter_contributed.Items.Add(RadListDataItem8)
-        Me.filter_contributed.Items.Add(RadListDataItem9)
-        Me.filter_contributed.Items.Add(RadListDataItem10)
+        RadListDataItem12.Text = "Umali, Christian Angelo "
+        RadListDataItem13.Text = "Dinglasan, Janisse Crizhna"
+        RadListDataItem14.Text = "Umali, Ma. Analisa"
+        RadListDataItem15.Text = "Villaruel, Zyrabelle"
+        RadListDataItem16.Text = "Umali, Randy P."
+        Me.filter_contributed.Items.Add(RadListDataItem12)
+        Me.filter_contributed.Items.Add(RadListDataItem13)
+        Me.filter_contributed.Items.Add(RadListDataItem14)
+        Me.filter_contributed.Items.Add(RadListDataItem15)
+        Me.filter_contributed.Items.Add(RadListDataItem16)
         Me.filter_contributed.Location = New System.Drawing.Point(93, 49)
         Me.filter_contributed.Name = "filter_contributed"
         Me.filter_contributed.Size = New System.Drawing.Size(243, 24)

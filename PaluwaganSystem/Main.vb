@@ -264,4 +264,8 @@ Public Class Main
 
         End Try
     End Sub
+
+    Private Sub Main_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class
