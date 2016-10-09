@@ -137,14 +137,15 @@ Public Class Main
                 Finally
                     MysqlConn.Dispose()
 
+                    rec_dtp_datecontributed.Value = DateTime.Now
+
+                    load_paluwaganmain()
+                    compute_totalearnings()
+                    rec_cb_amount.DropDownStyle = RadDropDownStyle.DropDownList
                 End Try
             End If
         End If
 
-        rec_dtp_datecontributed.Value = DateTime.Now
-
-        load_paluwaganmain()
-        compute_totalearnings()
     End Sub
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
@@ -267,5 +268,9 @@ Public Class Main
 
     Private Sub Main_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
+    End Sub
+
+    Private Sub btn_other_Click(sender As Object, e As EventArgs) Handles btn_other.Click
+        rec_cb_amount.DropDownStyle = RadDropDownStyle.DropDown
     End Sub
 End Class
